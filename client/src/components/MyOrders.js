@@ -184,12 +184,12 @@ const MyOrders = () => {
                                     }
                                   );
 
-                                  toast.success("Payment Successful!", {
+                                  history.push("/");
+
+                                  return toast.success("Payment Successful!", {
                                     position: toast.POSITION.TOP_CENTER,
                                     autoClose: 4000,
                                   });
-
-                                  window.location.reload(false);
                                 } catch (error) {
                                   console.log(error);
                                   return toast.error(
