@@ -148,7 +148,7 @@ const MyOrders = () => {
                                 history.push("/");
 
                                 return toast.error(
-                                  "Book order canceled, a refund will get in 2 working days!",
+                                  "Book order canceled, if already paid refund will get in 2 working days!",
                                   {
                                     position: toast.POSITION.TOP_CENTER,
                                     autoClose: 4000,
