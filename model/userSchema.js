@@ -22,8 +22,6 @@ const userSchema = new mongoose.Schema({
     {
       uId: {
         type: String,
-        unique: true,
-        immutable: true,
       },
       book_image: {
         type: String,
