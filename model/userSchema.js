@@ -20,8 +20,10 @@ const userSchema = new mongoose.Schema({
   },
   myOrders: [
     {
-      rank: {
+      uId: {
         type: String,
+        unique: true,
+        immutable: true,
       },
       book_image: {
         type: String,

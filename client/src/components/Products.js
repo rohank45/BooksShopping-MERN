@@ -77,7 +77,7 @@ const Products = () => {
                     onClick={async () => {
                       try {
                         const newOrderData = {
-                          rank: curElem.rank,
+                          rank: Math.random().toString(16).slice(2),
                           book_image: curElem.book_image,
                           title: curElem.title,
                           price: curElem.price,
