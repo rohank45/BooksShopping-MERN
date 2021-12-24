@@ -76,7 +76,7 @@ const Cart = () => {
                     onClick={async () => {
                       try {
                         const newOrderData = {
-                          rank: Math.random().toString(16).slice(2),
+                          rank: val.rank,
                           book_image: val.book_image,
                           title: val.title,
                           price: val.price,

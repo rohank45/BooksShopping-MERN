@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   },
   myOrders: [
     {
-      uId: {
+      rank: {
         type: String,
       },
       book_image: {
