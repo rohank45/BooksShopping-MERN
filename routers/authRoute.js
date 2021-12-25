@@ -21,7 +21,7 @@ router.get(
       res.redirect("https://buy-books.herokuapp.com/");
       res.send(req.user);
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
   }
 );
@@ -30,7 +30,7 @@ router.get("/auth/profile", isUserLogin, (req, res) => {
   try {
     res.send(req.user);
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 });
 
@@ -40,7 +40,7 @@ router.get("/auth/logout", (req, res) => {
     req.logout();
     res.redirect("https://buy-books.herokuapp.com/");
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 });
 
