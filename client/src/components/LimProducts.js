@@ -17,9 +17,7 @@ const LimProducts = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get(
-        "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=bvvivAeO3fEKT66GAXKZU6DRfHSdNksv"
-      );
+      const res = await axios.get(process.env.API_URL);
       setBooks(res.data.results.books);
     } catch (error) {
       console.log(error);

@@ -208,7 +208,7 @@ const MyOrders = () => {
                               currency="INR"
                               image={logo}
                               amount={amount * 100}
-                              stripeKey="pk_test_51Jy87DSG9ovprffCwJIBJu3VNYsqunVH6RxuTtt9oOgWZu2G8lf115LNmiHz4TJtzXAHVv3WuKVZxUnly1brCxX300ELhJuiad"
+                              stripeKey={process.env.STRIPE_API_KEY}
                               token={async (token) => {
                                 try {
                                   await axios.post(
