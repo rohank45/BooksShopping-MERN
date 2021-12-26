@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "./Footer";
 import Hero from "./Hero";
-import Products from "./Products";
+import LimProducts from "./LimProducts";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Products />
+      <LimProducts />
       <Footer />
     </>
   );

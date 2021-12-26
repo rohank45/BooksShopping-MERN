@@ -30,7 +30,7 @@ const Cart = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="dark:bg-gray-700 h-1/2 w-9/12 mobile:w-full my-5 rounded-lg shadow-2xl bg-gray-400 mobile:rounded-none">
+      <div className="dark:bg-gray-700 h-1/2 w-9/12 tablet:w-full tablet:rounded-none mobile:w-full my-5 rounded-lg shadow-2xl bg-gray-400 mobile:rounded-none">
         <button
           onClick={() => dispatch(emptyCart())}
           className="dark:bg-white dark:text-black bg-gray-800 text-white text-2xl font-bold px-4 py-2 mb-5 mt-2"

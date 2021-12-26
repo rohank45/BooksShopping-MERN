@@ -12,6 +12,7 @@ router.post("/capture/payment", isUserLogin, async (req, res) => {
 
       metadata: { integration_check: "accept_a_payment" },
     });
+
     // console.log("card details", req.body.token.card); id, name, address, brand, country, expiry.
     //paymentToken = req.body.token.id;
 

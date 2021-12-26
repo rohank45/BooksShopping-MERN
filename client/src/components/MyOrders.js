@@ -87,7 +87,7 @@ const MyOrders = () => {
       </div>
 
       <div className="flex justify-center items-center">
-        <div className="dark:bg-gray-700 h-1/2 w-9/12 mobile:w-full my-5 rounded-lg shadow-2xl bg-gray-400 mobile:rounded-none">
+        <div className="dark:bg-gray-700 h-1/2 w-9/12 tablet:w-full tablet:rounded-none mobile:w-full my-5 rounded-lg shadow-2xl bg-gray-400 mobile:rounded-none">
           <div className="px-5 flex flex-wrap gap-10 mb-10 my-5 mobile:px-2">
             {orderData?.map((val) => {
               const { rank, title, price, author, book_image } = val;
@@ -131,7 +131,43 @@ const MyOrders = () => {
 
                       <div className="flex justify-between text-xl text-white font-semibold mt-4">
                         {val.orderStatus === "delivered" ? (
-                          <button className="bg-blue-500 p-2 rounded-md shadow-lg w-full">
+                          <button
+                            onClick={async () => {
+                              try {
+                                const newOrderData = {
+                                  rank: val.rank,
+                                  book_image: val.book_image,
+                                  title: val.title,
+                                  price: val.price,
+                                  author: val.author,
+                                };
+
+                                await axios.post(
+                                  "https://buy-books.herokuapp.com/buy/book",
+                                  newOrderData
+                                );
+
+                                history.push("/");
+
+                                return toast.success(
+                                  "Book order placed successfully!",
+                                  {
+                                    position: toast.POSITION.TOP_CENTER,
+                                    autoClose: 3000,
+                                  }
+                                );
+                              } catch (error) {
+                                return toast.warning(
+                                  "Login first to order a book!",
+                                  {
+                                    position: toast.POSITION.TOP_CENTER,
+                                    autoClose: 3000,
+                                  }
+                                );
+                              }
+                            }}
+                            className="bg-blue-500 p-2 rounded-md shadow-lg w-full"
+                          >
                             Order again
                           </button>
                         ) : (
